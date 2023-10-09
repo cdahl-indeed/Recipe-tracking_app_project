@@ -9,10 +9,12 @@ function RecipeCreate(props) {
     const [formData, setFormData] = useState({ 
       name: '',
       cuisine: '',
-      photo: null,
+      photo: '',
       ingredients: '',
       preparation: '', 
     });
+
+
 
 const handleRecipeChange = ({ target }) => {
         setFormData({
@@ -38,16 +40,16 @@ const handleRecipeChange = ({ target }) => {
     //console.log('formDataCallout ', formData.name,formData.cuisine,formData.photo,formData.ingredients,formData.preparation);
    //formData is all the new recipe
     props.createRecipe(formData);
-    //console.log(formData);
+    console.log(formData);
     setFormData({
-      name: "",
-      cuisine: "",
-      photo: null,
-      ingredients: "",
-      preparation: ""
+      name: '',
+      cuisine: '',
+      photo: '',
+      ingredients: '',
+      preparation: ''
     });
 
-    //console.log('after ', formData);
+    console.log('after ', formData);
     
   };
 
@@ -62,8 +64,10 @@ const handleRecipeChange = ({ target }) => {
                 id="name"
                 type="text"
                 name="name"
+                required={true} 
                 onChange={handleRecipeChange}
                 placeholder={'Name'}
+                value={formData.name}
               />
             </td>
             <td>
@@ -71,8 +75,10 @@ const handleRecipeChange = ({ target }) => {
                   id="cuisine"
                   type="text"
                   name="cuisine"
+                  required={true} 
                   onChange={handleRecipeChange}
                   placeholder={'Cuisine'}
+                  value={formData.cuisine}
                 />
             </td>
             <td>
@@ -83,6 +89,7 @@ const handleRecipeChange = ({ target }) => {
                 required={true} 
                 onChange={handleRecipeChange}
                 placeholder={'URL'}
+                value={formData.photo}
               />
             </td>
             <td>
@@ -93,6 +100,7 @@ const handleRecipeChange = ({ target }) => {
                 rows={2} 
                 onChange={handleRecipeChange}
                 placeholder={'Ingredients'}
+                value={formData.ingredients}
                 />
             </td>
             <td>
@@ -103,6 +111,7 @@ const handleRecipeChange = ({ target }) => {
                 rows={2} 
                 onChange={handleRecipeChange}
                 placeholder={'Preparation'}
+                value={formData.preparation}
                 />
             </td>
             <td>
