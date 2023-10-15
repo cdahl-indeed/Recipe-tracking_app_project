@@ -23,8 +23,7 @@ currentRecipe.filter((recipe, index) => index !== indexToDelete)
 );
     
   }
-  
-  
+
   return (
     <div className="App">
       <header><h1>Delicious Food Recipes</h1></header>

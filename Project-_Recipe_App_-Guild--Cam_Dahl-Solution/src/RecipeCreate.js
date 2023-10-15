@@ -14,33 +14,20 @@ function RecipeCreate(props) {
       preparation: '', 
     });
 
-
-
 const handleRecipeChange = ({ target }) => {
         setFormData({
           ...formData,
           [target.name]: target.value,
         });
       };
-  
 
-//   const handleSubmit = (event) => {
-//       event.preventDefault();
-//             console.log(formData.name,formData.cuisine,formData.photo,formData.ingredients,formData.preparation);
-
-//     //formData is all the new recipe
-//     props.createRecipe(formData);
-    
-//       setFormData({ ...initialFormState });
-//     console.log('resetData');
-//     };
   
   const handleSubmit = (event) => {
     event.preventDefault();
     //console.log('formDataCallout ', formData.name,formData.cuisine,formData.photo,formData.ingredients,formData.preparation);
    //formData is all the new recipe
     props.createRecipe(formData);
-    console.log(formData);
+    // console.log(formData);
     setFormData({
       name: '',
       cuisine: '',
@@ -49,8 +36,6 @@ const handleRecipeChange = ({ target }) => {
       preparation: ''
     });
 
-    console.log('after ', formData);
-    
   };
 
   
